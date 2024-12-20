@@ -1,0 +1,257 @@
+/* 전체 컨테이너 */
+.container {
+    display: flex;
+    flex: 1;
+    position: relative;
+}
+
+/* 사이드바 스타일 */
+.sidebar {
+    background-color: #34495e; /* 어두운 블루 색상 */
+    color: white;
+    width: 250px;
+    height: 100%;
+    padding: 20px;
+    position: fixed; /* 사이드바 고정 */
+    left: -250px; /* 사이드바 숨기기 */
+    top: 0;
+    box-sizing: border-box;
+    transition: 0.3s; /* 사이드바가 토글될 때 부드럽게 전환되도록 */
+    z-index: 1000; /* 사이드바가 메인 콘텐츠 위로 오게 설정 */
+}
+
+.sidebar.active {
+    left: 0; /* 사이드바가 활성화되면 왼쪽으로 나타남 */
+}
+
+.sidebar h1 {
+    font-size: 28px;
+    margin-bottom: 40px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.sidebar .category {
+    font-size: 18px; /* 카테고리 이름 크기 */
+    color: #bdc3c7; /* 밝은 회색 */
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 10px 0;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+}
+
+.sidebar a:hover {
+    background-color: #1abc9c; /* 강조 색상: 연한 청록색 */
+}
+
+.sidebar a.active {
+    background-color: #16a085;
+}
+
+/* 전체 페이지 레이아웃 조정 */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 메인 콘텐츠 스타일 */
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: margin-left 0.3s ease; /* 부드러운 전환 효과 */
+}
+
+/* 푸터 스타일 */
+.footer {
+    background-color: #34495e; /* 원하는 색상 */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto; /* 푸터를 항상 화면 하단에 배치 */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 사이드바가 활성화된 경우 메인 콘텐츠 밀기 */
+.sidebar.active + .main-content {
+    margin-left: 250px; /* 사이드바 크기만큼 밀기 */
+}
+
+/* 헤더 스타일 */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* 타이틀 및 링크 스타일 */
+.header h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none; /* 링크 제거 */
+    cursor: pointer;
+}
+
+.header h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.header .user-info {
+    font-size: 16px;
+}
+
+.header .user-info a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    background-color: #3498db;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.header .user-info a:hover {
+    color: #2980b9;
+}
+
+/* 파일 검색 섹션 스타일 */
+.file-search {
+    text-align: center;
+    margin-bottom: 50px; /* 검색창과 최근 파일 사이에 빈 공간 추가 */
+    margin-top: 100px;
+}
+
+.file-search input {
+    padding: 12px;
+    width: 60%; /* 너비를 적당하게 줄여줍니다 */
+    max-width: 500px; /* 최대 너비를 설정하여 너무 넓어지지 않게 제한 */
+    margin-right: 10px;
+    font-size: 18px; /* 폰트 크기를 키워서 가독성을 높입니다 */
+    border-radius: 8px; /* 둥근 모서리 적용 */
+    border: 1px solid #bdc3c7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 입력창에 그림자 추가 */
+    transition: border-color 0.3s ease; /* 포커스 시 경계선 색상 변화 효과 */
+}
+
+.file-search input:focus {
+    border-color: #3498db; /* 입력창 포커스 시 색상 변경 */
+    outline: none; /* 기본 포커스 스타일 제거 */
+}
+
+.file-search button {
+    padding: 12px 25px; /* 버튼의 여백을 조금 더 여유롭게 */
+    background-color: #3498db;
+    color: white;
+    font-size: 18px; /* 버튼 폰트 크기 조정 */
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease; /* 버튼 배경 색상 변화 효과 */
+    margin-top: 10px; /* 버튼과 입력창 사이에 간격 추가 */
+}
+
+.file-search button:hover {
+    background-color: #2980b9;
+}
+
+/* 최근 업로드한 파일 섹션 */
+.recent-files {
+    margin-bottom: 100px;
+}
+
+.recent-files h3 {
+    font-size: 30px;
+    margin-top: 60px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.file-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.file-item {
+    width: 150px;
+    height: 150px;
+    background-color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.file-item p {
+    font-size: 16px;
+}
+
+/* 버튼 섹션 */
+.button-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn {
+    padding: 12px 24px;
+    background-color: #4e73df;
+    color: white;
+    font-size: 16px;
+    border: none;
+    margin: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #2c5ad0;
+}
+
+.btn-secondary {
+    background-color: #28a745;
+}
+
+.btn-secondary:hover {
+    background-color: #218838;
+}

@@ -41,6 +41,8 @@ sdist/
 # Django 관련
 db.sqlite3
 *.sqlite3
+static/admin/
+static/assets/
 staticfiles/
 media/
 .env

@@ -1,0 +1,86 @@
+/* 큰 컨테이너 */
+.study-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+/* 왼쪽: 강의 리스트 스타일 */
+.study-left {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+}
+
+.study-left h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.study-left ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.study-left ul li {
+    margin-bottom: 8px;
+}
+
+/* "나의 강의 리스트"와 "EDIT" 버튼을 나란히 배치 */
+.study-left .d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* EDIT 버튼 스타일 */
+.study-left button {
+    margin-left: 10px; /* 버튼과 텍스트 사이 간격 */
+    padding: 5px 10px; /* 버튼 크기 조정 */
+}
+
+/* 오른쪽 자료 목록 스타일 */
+.study-right {
+    width: 52%;
+    padding-left: 20px;
+}
+
+.study-right h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.study-right table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.study-right th, .study-right td {
+    padding: 12px;
+    text-align: left;
+}
+
+.study-right th {
+    background-color: #f1f1f1;
+}
+
+.study-right tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* 구분선 */
+.vr {
+    border-left: 2px solid #ddd;
+    height: 100%;
+    margin-left: -500px; /* 구분선의 왼쪽 마진 조정 */
+}
+
+/* 상단 제목 중앙 정렬 */
+.main-content h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
