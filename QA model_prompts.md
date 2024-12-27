@@ -1,3 +1,7 @@
+## 실험 내용
+- Few shot 개수(1,2,4)
+- 프롬프트 구조 (Context + Instruct, Instruct + Context)
+
 ### QA model Context + Instruct
 ```
 M_context_prompt_format = """<|begin_of_text|><|start_header_id|>system<|end_header_id|>
