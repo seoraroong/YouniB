@@ -10,4 +10,4 @@
 | Llama Instruct | 760/1000 | 2 |
 
 - 프롬프트
-![image](https://github.com/user-attachments/assets/1893bf2b-b7e3-44a2-9a49-546891d0cae3)
+- ![image](https://github.com/user-attachments/assets/1893bf2b-b7e3-44a2-9a49-546891d0cae3)
