@@ -11,3 +11,8 @@
 
 - 프롬프트
 - ![image](https://github.com/user-attachments/assets/1893bf2b-b7e3-44a2-9a49-546891d0cae3)
+
+## QA model 성능(LLAMA 3.1 instruct 8b)
+
+![image](https://github.com/user-attachments/assets/169a2c21-8d77-4a49-8de5-81a37354d018)
+![image](https://github.com/user-attachments/assets/e7f7b260-ddd6-4b3e-af16-9a05a2d78334)
