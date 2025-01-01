@@ -1,5 +1,5 @@
 ## 💡 YouniB: Your University Better, 대학생 학습 플랫폼
-https://github.com/LikeLion-TeamProject3-YouniB/YouniB/issues/3#issue-2765034414
+<img width="668" alt="화면 캡처 2025-01-01 210933" src="https://github.com/user-attachments/assets/09639740-11d1-4792-ad76-c06e30235f0d" />
 ### YouniB가 제공하는 기능
 - **강의 자료 관리**: 대학생들이 강의 자료 PDF를 강의별로 구조적으로 정리하고 관리할 수 있습니다. 
 - **문제 생성 기능**: 강의 자료를 분석해 객관식 및 단답형 문제를 자동으로 생성해 제공합니다.
