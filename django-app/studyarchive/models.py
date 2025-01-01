@@ -1,3 +1,5 @@
+# studyarchive/models.py
+
 from django.db import models
 from django.conf import settings  # settings.AUTH_USER_MODEL을 가져옵니다.
 from django.utils import timezone
@@ -21,5 +23,17 @@ class CourseMaterial(models.Model):
     description = models.TextField()  # 설명
     upload_date = models.DateTimeField(auto_now_add=True)  # 업로드 날짜와 시간
 
+    # 요약 상태 필드 추가
+    SUMMARY_STATUS_CHOICES = [
+        ('pending', '요약 중'),
+        ('completed', '요약 완료'),
+        ('failed', '요약 실패'),
+    ]
+    summary_status = models.CharField(
+        max_length=20,
+        choices=SUMMARY_STATUS_CHOICES,
+        default='pending',
+    )
+    
     def __str__(self):
         return f"Material for {self.course.name}: {self.title}"

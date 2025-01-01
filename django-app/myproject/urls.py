@@ -28,6 +28,7 @@ urlpatterns = [
     path('dashboard/', account_views.dashboard_view, name='dashboard'),
     path('studyarchive/', include('studyarchive.urls')),
     path('quizarchive/', include('quizarchive.urls')),
+    path('studydashboard/', include('studydashboard.urls')),
 ]
 
 # 미디어 파일 제공 설정

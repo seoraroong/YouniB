@@ -27,33 +27,39 @@ SECRET_KEY = 'django-insecure--e&9_r!5&-t3+%d9ac5=3bmulsp47y!5woqah@-x-2+-8bd@6+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 # LOGGING = {
-#     'version': 1,
-#     'disable_existing_loggers': False,
-#     'handlers': {
-#         'console': {
-#             'level': 'DEBUG',
-#             'class': 'logging.StreamHandler',
+#     "version": 1,
+#     "disable_existing_loggers": False,
+#     "handlers": {
+#         "console": {
+#             "level": "DEBUG",
+#             "class": "logging.StreamHandler",
+#         },
+#         "file": {
+#             "level": "DEBUG",
+#             "class": "logging.FileHandler",
+#             "filename": "debug.log",  # 로그가 저장될 파일 이름
 #         },
 #     },
-#     'loggers': {
-#         'django': {
-#             'handlers': ['console'],
-#             'level': 'DEBUG',
+#     "loggers": {
+#         "django": {
+#             "handlers": ["console", "file"],  # 콘솔과 파일 모두에 로그 출력
+#             "level": "DEBUG",
 #         },
-#         'django.request': {
-#             'handlers': ['console'],
-#             'level': 'DEBUG',
-#             'propagate': False,
+#         "__main__": {
+#             "handlers": ["console", "file"],  # 콘솔과 파일 모두에 로그 출력
+#             "level": "DEBUG",
 #         },
 #     },
 # }
-
 # Application definition
 
 INSTALLED_APPS = [
+    "daphne",
+    "channels",
+    'studydashboard',
     'quizarchive',
     'studyarchive',
     'accounts',
@@ -63,6 +69,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    'corsheaders',  # CORS 미들웨어 추가
 ]
 
 MIDDLEWARE = [
@@ -73,7 +80,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # CORS 미들웨어 추가
+    'django.middleware.common.CommonMiddleware',  # CommonMiddleware는 CORS 미들웨어 뒤에 위치해야 함
 ]
+
+# 모든 도메인에서 접근 허용 (특정 도메인으로 제한할 수 있음)
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'myproject.urls'
 
@@ -97,26 +109,48 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'myproject.wsgi.application'
 
+ASGI_APPLICATION = "myproject.asgi.application"
 
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("127.0.0.1", 6379)],  # Redis 서버 주소와 포트
+        },
+    },
+}
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# 데이터베이스 연결 URL
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://postgres:postgres@localhost:5432/postgres")
+# # 데이터베이스 연결 URL
+# DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://postgres:postgres@211.184.186.6:5432/postgres")
 
-# 데이터베이스 URL 파싱
-url = urlparse(DATABASE_URL)
+# # 데이터베이스 URL 파싱
+# url = urlparse(DATABASE_URL)
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': url.path[1:],  # Remove leading slash
+#         'USER': url.username,
+#         'PASSWORD': url.password,
+#         'HOST': url.hostname,
+#         'PORT': url.port,
+#         'OPTIONS': {
+#             'sslmode': 'disable',  # SSL 비활성화
+#         }
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': url.path[1:],  # Remove leading slash
-        'USER': url.username,
-        'PASSWORD': url.password,
-        'HOST': url.hostname,
-        'PORT': url.port,
+        'ENGINE': 'django.db.backends.postgresql',  # PostgreSQL 엔진 사용
+        'NAME': 'younib',                          # 생성한 데이터베이스 이름
+        'USER': 'younib',                          # 데이터베이스 사용자 이름
+        'PASSWORD': 'younib',                      # 해당 사용자의 비밀번호
+        'HOST': '127.0.0.1',                       # 로컬 PostgreSQL 서버 주소
+        'PORT': '5432',                            # PostgreSQL 기본 포트
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

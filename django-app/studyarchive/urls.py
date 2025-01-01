@@ -1,5 +1,7 @@
 from django.urls import path
 from . import views
+from .views import SaveQuizView 
+from .views import SaveSummaryView
 
 app_name = 'studyarchive'
 
@@ -11,4 +13,8 @@ urlpatterns = [
     path('upload_material/<int:course_id>/', views.upload_course_material, name='upload_course_material'),
     path('delete_material/<int:material_id>/', views.delete_material, name='delete_material'),
     path('edit_material/<int:material_id>/', views.edit_material, name='edit_material'),
+    path("courses/<int:course_id>/materials/", views.course_materials, name="course_materials"),
+    path('api/save-quiz/', SaveQuizView.as_view(), name='save_quiz'),
+    path('api/save-summary/', SaveSummaryView.as_view(), name='save_summary'),
+    path('material_summary/<int:material_id>/', views.get_summary, name='get_summary'),
 ]
