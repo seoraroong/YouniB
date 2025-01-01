@@ -22,7 +22,7 @@
 | 김설아 | 안도형 | 장석우 | 천세현 |
 | --- | --- | --- | --- |
 | [GitHub](https://github.com/seoraroong) | [GitHub](https://github.com/andohyung) | [GitHub](https://github.com/sukwoojang) | [GitHub](https://github.com/1000century) |
-| **PM** / **데이터 ETL** / **BE** / **FE** | **데이터 ETL** / **QA Modeling** | **데이터 ETL** / **QA Modeling** | **데이터 ETL** / **Summary Modeling** |
+| **PM** / **데이터 ETL** / **BE** / **FE** | **데이터 ETL** / **QA Modeling** | **데이터 ETL** / **Summary Modeling** | **데이터 ETL** / **QA Modeling** |
 
 
 
