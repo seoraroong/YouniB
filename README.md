@@ -45,7 +45,16 @@
 
 ## ERD
 
+<img width="533" alt="화면 캡처 2025-01-01 225654" src="https://github.com/user-attachments/assets/b4d52973-8442-4407-9927-aa37c56d6d65" />
+
 ## 시스템 아키텍처
+
+<img width="737" alt="image" src="https://github.com/user-attachments/assets/a7e7bfc6-4432-4432-85bd-f2498291f1c5" />
+
+<img width="915" alt="KakaoTalk_20241226_175024013" src="https://github.com/user-attachments/assets/f7a8a3a2-fd42-480f-9d96-0eed155193a4" />
+
+<img width="737" alt="화면 캡처 2025-01-01 225940" src="https://github.com/user-attachments/assets/94328261-bfd2-4c65-8366-8363a4ebdfd1" />
+
 
 ## 데이터 수집
 
