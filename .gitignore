@@ -1,0 +1,87 @@
+# Python 관련
+*.pyc
+*.pyo
+*$py.class
+__pycache__/
+*.so
+
+# 가상환경 폴더 무시
+env/
+venv/
+*.env
+django-app/django_env/
+airflow/airflow-younib/
+fastapi-app/fastapi-younib/
+younib/
+
+# 로그와 임시 파일
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# 빌드 및 배포
+build/
+dist/
+*.egg-info/
+.eggs/
+develop-eggs/
+parts/
+sdist/
+*.tar
+*.zip
+*.whl
+
+# IDE 설정
+.idea/
+.vscode/
+*.swp
+
+# Django 관련
+db.sqlite3
+*.sqlite3
+static/admin/
+static/assets/
+staticfiles/
+media/
+.env
+
+# FastAPI 관련
+logs/
+instance/
+*.db
+
+# Docker 관련
+*.pid
+*.sock
+docker-compose.override.yml
+
+# JSON 파일 (특정 JSON 제외 가능)
+*.json
+
+# pyenv 관련
+.python-version
+
+# pipenv 관련
+Pipfile
+Pipfile.lock
+
+# 중복 제거 및 간결화
+# 일부 특정 경로를 제외하려는 경우 세부적으로 작성 필요
+
+# FastAPI Model
+fastapi-app/model/generate_quiz/
+fastapi-app/model/generate_summary/
+
+# FastAPI Folder
+fastapi-app/temp_folder/
+fastapi-app/output_folder/
+fastapi-app/trigger_folder/
+fastapi-app/PDF-Extract-Kit-1.0/
+
+# env
+django-app/django_env/
+airflow/airflow-younib/
+fastapi-app/fastapi-younib/
+fastapi-app/fastapi-inference/
