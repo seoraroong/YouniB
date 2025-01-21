@@ -29,10 +29,9 @@
 
 
 ## 🛠 YouniB 기술 스택
-- Language: Python, JavaScript
-- Frontend: HTML/CSS, BootStrap5
+- Language: Python
+- Frontend: HTML/CSS, BootStrap, JavaScript
 - Backend: Django, FastAPI, Redis
-- DataEngineering: Apache Airflow
 - NLP: Hugging Face
 - Infra: Docker
 - DataBase: PostgreSQL
